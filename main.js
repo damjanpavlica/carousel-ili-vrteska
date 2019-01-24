@@ -1,3 +1,5 @@
+/*** VARIJABLE ***/
+
 const slika = document.getElementById('slika');
 const levo = document.getElementById('levo');
 const desno = document.getElementById('desno');
@@ -12,18 +14,35 @@ const niz = [
 
 let index = 0;
 
-desno.addEventListener('click', function() {
+/*** FUNKCIJE ***/
+
+function sledeci() {
     index++;
     if (index == niz.length) {
         index = 0;
     }
     slika.src = niz[index];
-})
+}
 
-levo.addEventListener('click', function() {
+function prethodni() {
     index--;
     if (index < 0) {
         index = niz.length - 1;
     }
     slika.src = niz[index];
-})
+}
+
+/*** DOGADJAJI ***/
+
+desno.addEventListener('click', sledeci)
+
+levo.addEventListener('click', prethodni)
+
+window.addEventListener('keydown', function(event) {
+    if (event.keyCode == 37) prethodni();
+    if (event.keyCode == 39) sledeci();
+});
+
+/*** INIT ***/
+
+setInterval(sledeci, 3000);
