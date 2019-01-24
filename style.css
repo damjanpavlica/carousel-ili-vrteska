@@ -1,0 +1,26 @@
+.carousel {
+    position: relative;
+}
+
+.carousel img {
+    width: 100%;
+}
+
+.strelica {
+    cursor: pointer;
+    color: white;
+    font-size: 300px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    user-select: none;
+    -moz-user-select: none;
+}
+
+#levo {
+    left: 20px;
+}
+
+#desno {
+    right: 20px;
+}
